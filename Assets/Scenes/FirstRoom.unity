@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &197718384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4080,9 +4080,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'bewu
-
-'
+  m_Text: Test
 --- !u!222 &1155277133
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5409,6 +5407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1155277132}
   dialogueText: {fileID: 1937263120}
+  dialogueBox: {fileID: 197718383}
   animator: {fileID: 375222750}
 --- !u!4 &1664983193
 Transform:
@@ -5847,7 +5846,7 @@ MonoBehaviour:
       podawa\u0107 wsz\u0119dzie swoich hase\u0142/PIN\xF3w."
     - "Poza tym, gratuluj\u0119 wygranej i dzi\u0119kuj\u0119 za przej\u015Bcie gry.\n"
     - "-Bartek W\u0142odarczyk"
-    - $EXITGAME
+    - $NEXTSCENE
 --- !u!114 &1790370700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6534,7 +6533,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: essa
+  m_Text: test
 --- !u!222 &1937263121
 CanvasRenderer:
   m_ObjectHideFlags: 0

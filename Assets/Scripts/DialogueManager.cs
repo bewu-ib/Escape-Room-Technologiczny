@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
+    public GameObject dialogueBox;
 
     public Animator animator;
 
@@ -22,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, GameObject toShow = null, Animator toShowAnim = null)
     {
+        dialogueBox.SetActive(true);
         animator.SetBool("isOpen", true);
 
         nameText.text = dialogue.name;
@@ -55,9 +58,9 @@ public class DialogueManager : MonoBehaviour
 
             animator.SetBool("isOpen", false);
         }
-        else if (sentence.StartsWith("$EXITGAME"))
+        else if (sentence.StartsWith("$NEXTSCENE"))
         {
-            Application.Quit();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else {
             StartCoroutine(TypeSentence(sentence));
@@ -80,5 +83,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
+        // dialogueBox.SetActive(false);
     }
 }
