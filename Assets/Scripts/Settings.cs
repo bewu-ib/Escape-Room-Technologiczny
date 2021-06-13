@@ -13,6 +13,11 @@ public class Settings : MonoBehaviour
         audioMixer.SetFloat("SoundEffectsVol", value);
     }
 
+    public void saveMusic(float value)
+    {
+        audioMixer.SetFloat("MusicVol", value);
+    }
+
     public void saveSettings()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);

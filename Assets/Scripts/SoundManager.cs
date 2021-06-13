@@ -10,14 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip correct;
     public AudioClip incorrect;
     public AudioClip applause;
-
-    private void Start()
-    {
-        if(SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            playEffect(applause);
-        }
-    }
+    public AudioClip startup;
 
     public void playEffect(AudioClip clip)
     {

@@ -7,8 +7,13 @@ public class ProgressManager : MonoBehaviour
 {
     public IDictionary<string, bool> bools = new Dictionary<string, bool>();
 
+    private SoundManager sm;
+
     private void Start()
     {
+        sm = FindObjectOfType<SoundManager>();
+        sm.playEffect(sm.startup);
+
         bools.Add("boardSolved", false);
         bools.Add("kartkaSolved", false);
         bools.Add("wybielaczSolved", false);
