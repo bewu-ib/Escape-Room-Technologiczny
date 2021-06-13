@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProgressManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class ProgressManager : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 }

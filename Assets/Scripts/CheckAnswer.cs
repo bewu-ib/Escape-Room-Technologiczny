@@ -14,8 +14,12 @@ public class CheckAnswer : MonoBehaviour
 
     public Dialogue afterSolved;
 
+    private SoundManager soundM;
+
     private void Start()
     {
+        soundM = FindObjectOfType<SoundManager>();
+
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(Check);
         input.Select();
@@ -26,6 +30,7 @@ public class CheckAnswer : MonoBehaviour
         if (input.text.ToLower() == correct)
         {
             FindObjectOfType<ProgressManager>().bools[boolName] = true;
+            soundM.playEffect(soundM.correct);
 
             animator.SetBool("isOpen", false);
             questionObject.SetActive(false);
@@ -33,6 +38,8 @@ public class CheckAnswer : MonoBehaviour
         }
         else
         {
+            soundM.playEffect(soundM.incorrect);
+
             input.text = "";
             input.animator.SetTrigger("wrong");
             input.Select();
